@@ -1,5 +1,11 @@
 pipeline {
     agent any
+tools {
+/*        jdk 'Java17'
+        #maven 'Maven3'*/
+        git 'Git'
+        
+    }
 
     environment {
         APP    = "${env.App_Name}"
