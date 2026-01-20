@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    environment {
+        APP    = "${env.App_Name}"
+        BRANCH = "${env.Branchname}"
+    }
+
+    stages {
+
+        stage('Checkout from SCM') {
+            steps {
+                git branch: "${env.BRANCH}",
+                    credentialsId: 'GitHub',
+                    url: 'https://github.com/panugantisailalithasri/Shiva-Forked-userms.git'
+            }
+        }
+
+        stage('Build Application') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
