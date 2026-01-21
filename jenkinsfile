@@ -22,8 +22,10 @@ tools {
 
         stage('Build Application') {
             steps {
-                sh 'cd userms'
-                sh 'mvn clean package'
+                sh '''
+            cd userms
+            mvn clean package
+        '''
             }
         }
     }
