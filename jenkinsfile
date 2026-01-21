@@ -24,7 +24,7 @@ tools {
             steps {
                 sh '''
             cd userms
-            mvn clean package
+            mvn clean install
         '''
             }
         }
